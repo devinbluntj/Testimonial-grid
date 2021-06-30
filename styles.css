@@ -1,0 +1,201 @@
+@import url('https://fonts.google.com/specimen/Barlow+Semi+Condensed');
+.generic_class {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+/* ---- UNIVERSAL STYLES ---- */
+/* ---- UNIVERSAL STYLES ---- */
+/* ---- UNIVERSAL STYLES ---- */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: var(--Light-gray);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+h3 {
+    font-size: 1.4rem;
+    line-height: 1.5em;
+}
+
+span {
+    font-size: 1.1rem;
+}
+
+p {
+    font-size: 1.3rem;
+    opacity: .7;
+    padding: 1.5rem 0;
+}
+
+h2 {
+    padding-top: 1.5rem;
+    font-size: 1.7rem;
+}
+/* ---- VARIABLES ---- */
+:root {
+
+/* ### Primary */
+
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+/* ### Neutral */
+
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+.card {
+    margin:0 2.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    min-height: 100%;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.card:first-child {
+    margin-top: 5rem;
+}
+
+.card-1 {
+    background-color: var(--Moderate-violet);
+    position: relative;
+    background-image: url('./images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+.card-2 {
+    background-color: var(--Very-dark-grayish-blue);
+}
+
+.card-3,
+.card-5 {
+    background-color: var(--Light-grayish-blue);
+}
+
+.card-4 {
+    background-color: var(--Very-dark-blackish-blue);
+}
+
+.card h2, p {
+    color: var(--Very-dark-blackish-blue);
+}
+
+h3:nth-child(1) {
+    color: white;
+}
+
+.g-details {
+    display: flex;
+}
+
+.g-details img {
+    border-radius: 50%;
+}
+
+.g-details h3, span {
+    padding-top: 1rem;
+    padding-left: 2rem;
+    color: var(--Very-dark-blackish-blue);
+    opacity: .5;
+}
+
+.card-1 > .g-details > div .name-tag,
+.card-2 > .g-details > div .name-tag,
+.card-4 > .g-details > div .name-tag,
+.card-1 h2, .card-1 p,
+.card-2 h2, .card-2 p,
+.card-4 h2, .card-4 p,
+.s1,
+.s2,
+.s4  {
+    color: var(--White);
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+
+/* ---- MEDIA QUERIES ---- */
+/* ---- MEDIA QUERIES ---- */
+/* ---- MEDIA QUERIES ---- */
+
+
+@media screen and (min-width:600px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h2{
+        line-height: 1.2em;
+    }
+
+    p {
+        line-height: 1.4em; 
+    }
+
+    .card {
+        margin:0;
+    }
+    
+    .card:first-child {
+        margin-top: 0;
+    }
+
+    .card-1 {
+        grid-area: card1;
+    }
+
+    .card-2 {
+        grid-area: card2;
+    }
+
+    .card-3 {
+        grid-area: card3;
+    }
+
+    .card-4 {
+        grid-area: card4;
+    }
+
+    .card-5 {
+        grid-area: card5;
+    }
+
+    .container {
+        margin: 5rem 8rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 3rem;
+        grid-template-areas: 'card1 card1 card2 card5'
+                             'card3 card4 card4 card5';
+    }
+}
